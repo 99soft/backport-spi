@@ -41,11 +41,11 @@ final class ServiceInstancesIterator<S>
      */
     public boolean hasNext()
     {
-        if ( this.knownProviders.hasNext() )
+        if ( knownProviders.hasNext() )
         {
             return true;
         }
-        return this.serviceIterator.hasNext();
+        return serviceIterator.hasNext();
     }
 
     /**
@@ -53,11 +53,11 @@ final class ServiceInstancesIterator<S>
      */
     public S next()
     {
-        if ( this.knownProviders.hasNext() )
+        if ( knownProviders.hasNext() )
         {
-            return this.knownProviders.next().getValue();
+            return knownProviders.next().getValue();
         }
-        return this.serviceIterator.next();
+        return serviceIterator.next();
     }
 
     /**

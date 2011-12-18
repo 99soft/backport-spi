@@ -121,7 +121,7 @@ public final class ServiceLoader<S>
     {
         this.service = service;
         this.classLoader = classLoader;
-        this.reload();
+        reload();
     }
 
     /**
@@ -129,20 +129,21 @@ public final class ServiceLoader<S>
      */
     public void reload()
     {
-        this.servicesTypes.clear();
-        this.services.clear();
+        servicesTypes.clear();
+        services.clear();
 
-        String fullName = SERVICE_PREFIX + this.service.getName();
+        String fullName = SERVICE_PREFIX + service.getName();
         try
         {
-            Enumeration<URL> serviceResources = this.classLoader.getResources( fullName );
-            this.serviceClassIterator =
-                new ServiceClassIterator<S>( this.service, this.classLoader, serviceResources, this.servicesTypes );
+            Enumeration<URL> serviceResources = classLoader.getResources( fullName );
+            serviceClassIterator =
+                new ServiceClassIterator<S>( service, classLoader, serviceResources, servicesTypes );
         }
         catch ( IOException e )
         {
-            throw new ServiceConfigurationError( "An error occurred while loading '" + fullName
-                + "' Service resource(s) from clabackport-spiath", e );
+            throw new ServiceConfigurationError( "An error occurred while loading '"
+                                                 + fullName
+                                                 + "' Service resource(s) from clabackport-spiath", e );
         }
     }
 
@@ -151,8 +152,8 @@ public final class ServiceLoader<S>
      */
     public Iterator<S> iterator()
     {
-        return new ServiceInstancesIterator<S>( this.services.entrySet().iterator(),
-                                                new ServiceIterator<S>( this.typesIterator(), this.services ) );
+        return new ServiceInstancesIterator<S>( services.entrySet().iterator(),
+                                                new ServiceIterator<S>( typesIterator(), services ) );
     }
 
     /**
@@ -163,7 +164,7 @@ public final class ServiceLoader<S>
      */
     public Iterator<Class<? extends S>> typesIterator()
     {
-        return new ServiceTypesIterator<S>( this.servicesTypes.entrySet().iterator(), this.serviceClassIterator );
+        return new ServiceTypesIterator<S>( servicesTypes.entrySet().iterator(), serviceClassIterator );
     }
 
     /**
@@ -172,7 +173,7 @@ public final class ServiceLoader<S>
     @Override
     public String toString()
     {
-        return this.getClass().getName() + "[" + this.service.getName() + "]";
+        return getClass().getName() + "[" + service.getName() + "]";
     }
 
 }

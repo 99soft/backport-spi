@@ -40,7 +40,7 @@ final class ServiceIterator<S>
      */
     public boolean hasNext()
     {
-        return this.typesIterator.hasNext();
+        return typesIterator.hasNext();
     }
 
     /**
@@ -48,11 +48,11 @@ final class ServiceIterator<S>
      */
     public S next()
     {
-        Class<? extends S> serviceClass = this.typesIterator.next();
+        Class<? extends S> serviceClass = typesIterator.next();
         try
         {
             S provider = serviceClass.newInstance();
-            this.providers.put( serviceClass, provider );
+            providers.put( serviceClass, provider );
             return provider;
         }
         catch ( Exception e )
