@@ -31,7 +31,7 @@ import java.util.NoSuchElementException;
  * @param <S> The type of the service to be loaded by this loader.
  * @since 1.0.1
  */
-class ServiceClassIterator<S>
+final class ServiceClassIterator<S>
     implements Iterator<Class<? extends S>>
 {
 
@@ -81,21 +81,21 @@ class ServiceClassIterator<S>
      */
     public boolean hasNext()
     {
-        if ( this.nextName != null )
+        if ( nextName != null )
         {
             return true;
         }
 
-        while ( ( this.pending == null ) || !this.pending.hasNext() )
+        while ( ( pending == null ) || !pending.hasNext() )
         {
             if ( !serviceResources.hasMoreElements() )
             {
                 return false;
             }
-            this.pending = parseServiceFile( this.serviceResources.nextElement() );
+            pending = parseServiceFile( serviceResources.nextElement() );
         }
 
-        this.nextName = this.pending.next();
+        nextName = pending.next();
         return true;
     }
 
@@ -108,18 +108,18 @@ class ServiceClassIterator<S>
         {
             throw new NoSuchElementException();
         }
-        String className = this.nextName;
-        this.nextName = null;
+        String className = nextName;
+        nextName = null;
         try
         {
-            Class<?> clazz = Class.forName( className, true, this.classLoader );
-            if ( !this.service.isAssignableFrom( clazz ) )
+            Class<?> clazz = Class.forName( className, true, classLoader );
+            if ( !service.isAssignableFrom( clazz ) )
             {
                 throw new ServiceConfigurationError( "Provider '" + className + "' is not assignable to Service '"
-                    + this.service.getName() + "'" );
+                    + service.getName() + "'" );
             }
-            Class<? extends S> serviceClass = clazz.asSubclass( this.service );
-            this.providerTypes.put( className, serviceClass );
+            Class<? extends S> serviceClass = clazz.asSubclass( service );
+            providerTypes.put( className, serviceClass );
             return serviceClass;
         }
         catch ( ClassNotFoundException e )
@@ -128,8 +128,11 @@ class ServiceClassIterator<S>
         }
         catch ( ClassCastException e )
         {
-            throw new ServiceConfigurationError( "Provider '" + className + "' is not assignable to Service '"
-                + this.service.getName() + "'", e );
+            throw new ServiceConfigurationError( "Provider '"
+                                                 + className
+                                                 + "' is not assignable to Service '"
+                                                 + service.getName()
+                                                 + "'", e );
         }
         catch ( Throwable e )
         {
@@ -161,14 +164,17 @@ class ServiceClassIterator<S>
             inputStream = url.openStream();
             reader = new InputStreamReader( inputStream, UTF_8 );
             ServiceFileParser<S> serviceFileParser = new ServiceFileParser<S>( reader );
-            serviceFileParser.setProviderTypes( this.providerTypes );
+            serviceFileParser.setProviderTypes( providerTypes );
             serviceFileParser.parse();
             return serviceFileParser.iterator();
         }
         catch ( Exception e )
         {
-            throw new ServiceConfigurationError( "An error occurred while reading service resource '" + url
-                + "' for service class '" + this.service.getName() + "'", e );
+            throw new ServiceConfigurationError( "An error occurred while reading service resource '"
+                                                 + url
+                                                 + "' for service class '"
+                                                 + service.getName()
+                                                 + "'", e );
         }
         finally
         {
