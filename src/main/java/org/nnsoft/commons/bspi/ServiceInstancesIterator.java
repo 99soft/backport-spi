@@ -1,5 +1,5 @@
 /*
- *    Copyright 2010 The backport-spi Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,25 +13,26 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.bspi;
+package org.nnsoft.commons.bspi;
 
 import java.util.Iterator;
 import java.util.Map.Entry;
 
 /**
- * 
- *
  * @version $Id: ServiceInstancesIterator.java 25 2010-07-31 20:47:21Z simone.tripodi $
  * @param <S>
  */
-final class ServiceInstancesIterator<S> implements Iterator<S> {
+final class ServiceInstancesIterator<S>
+    implements Iterator<S>
+{
 
     private final Iterator<Entry<Class<? extends S>, S>> knownProviders;
 
     private final ServiceIterator<S> serviceIterator;
 
-    public ServiceInstancesIterator(Iterator<Entry<Class<? extends S>, S>> knownProviders,
-            ServiceIterator<S> serviceIterator) {
+    public ServiceInstancesIterator( Iterator<Entry<Class<? extends S>, S>> knownProviders,
+                                     ServiceIterator<S> serviceIterator )
+    {
         this.knownProviders = knownProviders;
         this.serviceIterator = serviceIterator;
     }
@@ -39,8 +40,10 @@ final class ServiceInstancesIterator<S> implements Iterator<S> {
     /**
      * {@inheritDoc}
      */
-    public boolean hasNext() {
-        if (this.knownProviders.hasNext()) {
+    public boolean hasNext()
+    {
+        if ( this.knownProviders.hasNext() )
+        {
             return true;
         }
         return this.serviceIterator.hasNext();
@@ -49,8 +52,10 @@ final class ServiceInstancesIterator<S> implements Iterator<S> {
     /**
      * {@inheritDoc}
      */
-    public S next() {
-        if (this.knownProviders.hasNext()) {
+    public S next()
+    {
+        if ( this.knownProviders.hasNext() )
+        {
             return this.knownProviders.next().getValue();
         }
         return this.serviceIterator.next();
@@ -59,7 +64,8 @@ final class ServiceInstancesIterator<S> implements Iterator<S> {
     /**
      * {@inheritDoc}
      */
-    public void remove() {
+    public void remove()
+    {
         throw new UnsupportedOperationException();
     }
 

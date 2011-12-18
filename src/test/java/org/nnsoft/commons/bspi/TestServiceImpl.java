@@ -1,5 +1,5 @@
 /*
- *    Copyright 2010 The backport-spi Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,10 +13,10 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
+package org.nnsoft.commons.bspi;
 
-/**
- * Contains the backport SPI APIs implementation.
- *
- * @version $Id: package-info.java 12 2010-07-24 21:53:17Z simone.tripodi $
- */
-package com.googlecode.bspi;
+public final class TestServiceImpl
+    implements TestService
+{
+
+}

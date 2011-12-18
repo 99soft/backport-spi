@@ -1,5 +1,5 @@
 /*
- *    Copyright 2010 The backport-spi Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,25 +13,26 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.bspi;
+package org.nnsoft.commons.bspi;
 
 import java.util.Iterator;
 import java.util.Map.Entry;
 
 /**
- * 
- *
  * @version $Id: ServiceTypesIterator.java 26 2010-07-31 20:48:25Z simone.tripodi $
  * @param <S>
  */
-final class ServiceTypesIterator<S> implements Iterator<Class<? extends S>> {
+final class ServiceTypesIterator<S>
+    implements Iterator<Class<? extends S>>
+{
 
     private final Iterator<Entry<String, Class<? extends S>>> knownServicesTypes;
 
     private final ServiceClassIterator<S> serviceClassIterator;
 
-    public ServiceTypesIterator(Iterator<Entry<String, Class<? extends S>>> knownServicesTypes,
-            ServiceClassIterator<S> serviceClassIterator) {
+    public ServiceTypesIterator( Iterator<Entry<String, Class<? extends S>>> knownServicesTypes,
+                                 ServiceClassIterator<S> serviceClassIterator )
+    {
         this.knownServicesTypes = knownServicesTypes;
         this.serviceClassIterator = serviceClassIterator;
     }
@@ -39,8 +40,10 @@ final class ServiceTypesIterator<S> implements Iterator<Class<? extends S>> {
     /**
      * {@inheritDoc}
      */
-    public boolean hasNext() {
-        if (this.knownServicesTypes.hasNext()) {
+    public boolean hasNext()
+    {
+        if ( this.knownServicesTypes.hasNext() )
+        {
             return true;
         }
         return this.serviceClassIterator.hasNext();
@@ -49,8 +52,10 @@ final class ServiceTypesIterator<S> implements Iterator<Class<? extends S>> {
     /**
      * {@inheritDoc}
      */
-    public Class<? extends S> next() {
-        if (this.knownServicesTypes.hasNext()) {
+    public Class<? extends S> next()
+    {
+        if ( this.knownServicesTypes.hasNext() )
+        {
             return this.knownServicesTypes.next().getValue();
         }
         return this.serviceClassIterator.next();
@@ -59,7 +64,8 @@ final class ServiceTypesIterator<S> implements Iterator<Class<? extends S>> {
     /**
      * {@inheritDoc}
      */
-    public void remove() {
+    public void remove()
+    {
         throw new UnsupportedOperationException();
     }
 

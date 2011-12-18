@@ -14,8 +14,6 @@
 #    limitations under the License.
 #
 
-# version $Id$
+org.nnsoft.commons.bspi.TestServiceImpl
 
-com.googlecode.bspi.TestServiceImpl
-
-com.googlecode.bspi.TestServiceImpl # should be ignored, declared twice!
+org.nnsoft.commons.bspi.TestServiceImpl # should be ignored, declared twice!

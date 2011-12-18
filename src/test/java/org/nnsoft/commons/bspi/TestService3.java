@@ -1,5 +1,5 @@
 /*
- *    Copyright 2010 The backport-spi Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,12 +13,9 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.bspi;
+package org.nnsoft.commons.bspi;
 
-/**
- * 
- * @version $Id: TestService2.java 3 2010-07-24 18:40:40Z simone.tripodi $
- */
-public interface TestService2 {
+public interface TestService3
+{
 
 }

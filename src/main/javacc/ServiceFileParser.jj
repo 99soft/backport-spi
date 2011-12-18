@@ -1,6 +1,6 @@
 PARSER_BEGIN(ServiceFileParser)
 /*
- *    Copyright 2010 The backport-spi Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -14,34 +14,28 @@ PARSER_BEGIN(ServiceFileParser)
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.bspi;
+package org.nnsoft.commons.bspi;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-/**
- * 
- *
- * @version $Id$
- */
-final class ServiceFileParser<S> implements Iterable<String> {
+final class ServiceFileParser<S>
+    implements Iterable<String>
+{
 
     private final Set<String> serviceClassNames = new LinkedHashSet<String>();
 
     private LinkedHashMap<String, Class<? extends S>> providerTypes;
 
-    @Deprecated
-    public void setProviders(LinkedHashMap<String, S> providers) {
-        // do nothing
-    }
-
-    public void setProviderTypes(LinkedHashMap<String, Class<? extends S>> providerTypes) {
+    public void setProviderTypes( LinkedHashMap<String, Class<? extends S>> providerTypes )
+    {
         this.providerTypes = providerTypes;    }
 
-    public Iterator<String> iterator() {
-        return this.serviceClassNames.iterator();    }
+    public Iterator<String> iterator()
+    {
+        return serviceClassNames.iterator();    }
 
 }
 
@@ -109,7 +103,8 @@ void parse(): {}
 private void serviceName(): { Token serviceClassToken; }
 {    (serviceClassToken = <QUALIFIED_NAME>) {
         String serviceClassName = serviceClassToken.toString();
-        if (!this.providerTypes.containsKey(serviceClassName)) {            this.serviceClassNames.add(serviceClassName);
+        if ( !this.providerTypes.containsKey( serviceClassName ) )
+        {            serviceClassNames.add( serviceClassName );
         }
     }
 }

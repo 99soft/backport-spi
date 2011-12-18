@@ -1,5 +1,5 @@
 /*
- *    Copyright 2010 The backport-spi Team
+ *    Copyright 2010-2011 The 99 Software Foundation
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,24 +13,25 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.googlecode.bspi;
+package org.nnsoft.commons.bspi;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 /**
- * 
  * @version $Id: ServiceIterator.java 27 2010-07-31 21:07:38Z simone.tripodi $
  * @param <S> The type of the service to be loaded by this loader.
  */
-final class ServiceIterator<S> implements Iterator<S> {
+final class ServiceIterator<S>
+    implements Iterator<S>
+{
 
     private final Iterator<Class<? extends S>> typesIterator;
 
     private final LinkedHashMap<Class<? extends S>, S> providers;
 
-    public ServiceIterator(Iterator<Class<? extends S>> typesIterator,
-            LinkedHashMap<Class<? extends S>, S> providers) {
+    public ServiceIterator( Iterator<Class<? extends S>> typesIterator, LinkedHashMap<Class<? extends S>, S> providers )
+    {
         this.typesIterator = typesIterator;
         this.providers = providers;
     }
@@ -38,30 +39,35 @@ final class ServiceIterator<S> implements Iterator<S> {
     /**
      * {@inheritDoc}
      */
-    public boolean hasNext() {
+    public boolean hasNext()
+    {
         return this.typesIterator.hasNext();
     }
 
     /**
      * {@inheritDoc}
      */
-    public S next() {
+    public S next()
+    {
         Class<? extends S> serviceClass = this.typesIterator.next();
-        try {
+        try
+        {
             S provider = serviceClass.newInstance();
-            this.providers.put(serviceClass, provider);
+            this.providers.put( serviceClass, provider );
             return provider;
-        } catch (Exception e) {
-            throw new ServiceConfigurationError("Provider '"
-                    + serviceClass.getName()
-                    + "' could not be instantiated", e);
+        }
+        catch ( Exception e )
+        {
+            throw new ServiceConfigurationError( "Provider '" + serviceClass.getName() + "' could not be instantiated",
+                                                 e );
         }
     }
 
     /**
      * {@inheritDoc}
      */
-    public void remove() {
+    public void remove()
+    {
         throw new UnsupportedOperationException();
     }
 
