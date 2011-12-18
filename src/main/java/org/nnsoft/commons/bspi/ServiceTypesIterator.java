@@ -1,3 +1,5 @@
+package org.nnsoft.commons.bspi;
+
 /*
  *    Copyright 2010-2011 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.commons.bspi;
 
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -41,11 +42,11 @@ final class ServiceTypesIterator<S>
      */
     public boolean hasNext()
     {
-        if ( this.knownServicesTypes.hasNext() )
+        if ( knownServicesTypes.hasNext() )
         {
             return true;
         }
-        return this.serviceClassIterator.hasNext();
+        return serviceClassIterator.hasNext();
     }
 
     /**
@@ -53,11 +54,11 @@ final class ServiceTypesIterator<S>
      */
     public Class<? extends S> next()
     {
-        if ( this.knownServicesTypes.hasNext() )
+        if ( knownServicesTypes.hasNext() )
         {
-            return this.knownServicesTypes.next().getValue();
+            return knownServicesTypes.next().getValue();
         }
-        return this.serviceClassIterator.next();
+        return serviceClassIterator.next();
     }
 
     /**
