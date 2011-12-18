@@ -25,7 +25,7 @@ Introduction
 
   JDK 6 introduced <ServiceLoader>. <ServiceLoader> loads things based on flat files
   in the directory <<<META-INF/services>>> from the Java classpath. The mechanism of
-  using <<<META-INF/services>>> has been around since JDK 1.3, under the name the
+  using <<<META-INF/services>>> has been around since JDK 1.3, under the name of
   Java Extension Mechanism.
 
   This library aims to provide a backport compatibility of Service Provider
