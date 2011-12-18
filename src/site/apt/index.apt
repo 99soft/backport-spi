@@ -73,9 +73,10 @@ Introduction
 +--------------------------------------+
 import java.util.ServiceLoader;
 ...
-ServiceLoader<HelloService> ldr = ServiceLoader.load(HelloService.class);
-for (HelloService provider : ldr) {
-    doSomething(provider);
+ServiceLoader<HelloService> ldr = ServiceLoader.load( HelloService.class );
+for ( HelloService provider : ldr )
+{
+    doSomething( provider );
 }
 +--------------------------------------+
 
@@ -90,9 +91,10 @@ for (HelloService provider : ldr) {
 +--------------------------------------+
 import java.util.ServiceLoader;
 ...
-ServiceLoader<HelloService> ldr = ServiceLoader.load(HelloService.class);
+ServiceLoader<HelloService> ldr = ServiceLoader.load( HelloService.class );
 Iterator<Class<? extends HelloService>> serviceClassIterator = ldr.typesIterator();
-while (serviceClassIterator.hasNext()) {
+while ( serviceClassIterator.hasNext() )
+{
     // do something
 }
 +--------------------------------------+
