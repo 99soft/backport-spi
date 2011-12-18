@@ -1,9 +1,9 @@
                                     ------
                                     Introduction
                                     ------
-                                    The backport-spi Team
+                                    The 99 Software Foundation
                                     ------
-                                     2010
+                                     2010-2011
 
 ~~
 ~~   Copyright 2010-2011 The 99 Software Foundation
@@ -21,8 +21,6 @@
 ~~   limitations under the License.
 ~~
 
-~~version: $Id: index.apt 36 2010-07-31 22:57:53Z simone.tripodi $
-
 Introduction
 
   JDK 6 introduced <ServiceLoader>. <ServiceLoader> loads things based on flat files
@@ -37,13 +35,13 @@ Introduction
 
 +--------------------------------------+
 <dependencies>
-    ...
-    <dependency>
-        <groupId>com.googlecode.backport-spi</groupId>
-        <artifactId>backport-spi</artifactId>
-        <version>XX.XX</version>
-    </dependency>
-    ...
+  ...
+  <dependency>
+    <groupId>org.99soft.commons</groupId>
+    <artifactId>backport-spi</artifactId>
+    <version>XX.XX</version>
+  </dependency>
+  ...
 </dependencies>
 +--------------------------------------+
 
