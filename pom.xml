@@ -91,7 +91,6 @@
             </goals>
             <configuration>
               <input>{classes}</input>
-              <output>${project.build.directory}/classes</output>
               <overwrite>true</overwrite>
               <excludes>
                 <exclude>junit:junit</exclude>
