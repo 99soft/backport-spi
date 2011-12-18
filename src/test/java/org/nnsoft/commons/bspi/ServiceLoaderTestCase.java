@@ -15,9 +15,9 @@
  */
 package org.nnsoft.commons.bspi;
 
-import org.nnsoft.commons.bspi.ServiceConfigurationError;
-import org.nnsoft.commons.bspi.ServiceLoader;
-import org.testng.annotations.Test;
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
 
 public final class ServiceLoaderTestCase
 {
@@ -28,14 +28,14 @@ public final class ServiceLoaderTestCase
     {
         ServiceLoader<TestService> testServiceLoader = ServiceLoader.load( TestService.class );
 
-        assert testServiceLoader.typesIterator().next() != null;
-        assert testServiceLoader.typesIterator().next() != null;
+        assertNotNull( testServiceLoader.typesIterator().next() );
+        assertNotNull( testServiceLoader.typesIterator().next() );
 
-        assert testServiceLoader.iterator().next() != null;
-        assert testServiceLoader.iterator().next() != null;
+        assertNotNull( testServiceLoader.iterator().next() );
+        assertNotNull( testServiceLoader.iterator().next() );
     }
 
-    @Test( expectedExceptions = { ServiceConfigurationError.class } )
+    @Test( expected = ServiceConfigurationError.class )
     public void serviceNotFound()
         throws Exception
     {
@@ -43,7 +43,7 @@ public final class ServiceLoaderTestCase
         testService2Loader.iterator().next();
     }
 
-    @Test( expectedExceptions = { ServiceConfigurationError.class } )
+    @Test( expected = ServiceConfigurationError.class )
     public void notAssignableServiceLoading()
         throws Exception
     {
