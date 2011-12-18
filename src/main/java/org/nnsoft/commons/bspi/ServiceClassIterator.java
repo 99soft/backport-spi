@@ -112,7 +112,7 @@ final class ServiceClassIterator<S>
         nextName = null;
         try
         {
-            Class<?> clazz = Class.forName( className, true, classLoader );
+            Class<?> clazz = classLoader.loadClass( className );
             if ( !service.isAssignableFrom( clazz ) )
             {
                 throw new ServiceConfigurationError( "Provider '" + className + "' is not assignable to Service '"
