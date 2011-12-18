@@ -1,0 +1,1380 @@
+<api>
+<package name="org.nnsoft.commons.bspi"
+>
+<class name="ParseException"
+ extends="java.lang.Exception"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ParseException"
+ type="org.nnsoft.commons.bspi.ParseException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="ParseException"
+ type="org.nnsoft.commons.bspi.ParseException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="ParseException"
+ type="org.nnsoft.commons.bspi.ParseException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="currentTokenVal" type="org.nnsoft.commons.bspi.Token">
+</parameter>
+<parameter name="expectedTokenSequencesVal" type="int[][]">
+</parameter>
+<parameter name="tokenImageVal" type="java.lang.String[]">
+</parameter>
+</constructor>
+<field name="currentToken"
+ type="org.nnsoft.commons.bspi.Token"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="eol"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="expectedTokenSequences"
+ type="int[][]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="tokenImage"
+ type="java.lang.String[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="ServiceConfigurationError"
+ extends="java.lang.Error"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="ServiceConfigurationError"
+ type="org.nnsoft.commons.bspi.ServiceConfigurationError"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="ServiceConfigurationError"
+ type="org.nnsoft.commons.bspi.ServiceConfigurationError"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="cause" type="java.lang.Throwable">
+</parameter>
+</constructor>
+</class>
+<interface name="ServiceFileParserConstants"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<field name="DEFAULT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="0"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="DIGIT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="12"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="EOF"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="0"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="IDENTIFIER"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="10"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="IN_SINGLE_LINE_COMMENT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="1"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="LETTER"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="11"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="QUALIFIED_NAME"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="9"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="SINGLE_LINE_COMMENT"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="7"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="tokenImage"
+ type="java.lang.String[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</interface>
+<class name="ServiceFileParserTokenManager"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.nnsoft.commons.bspi.ServiceFileParserConstants">
+</implements>
+<constructor name="ServiceFileParserTokenManager"
+ type="org.nnsoft.commons.bspi.ServiceFileParserTokenManager"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="org.nnsoft.commons.bspi.SimpleCharStream">
+</parameter>
+</constructor>
+<constructor name="ServiceFileParserTokenManager"
+ type="org.nnsoft.commons.bspi.ServiceFileParserTokenManager"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="org.nnsoft.commons.bspi.SimpleCharStream">
+</parameter>
+<parameter name="lexState" type="int">
+</parameter>
+</constructor>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="org.nnsoft.commons.bspi.SimpleCharStream">
+</parameter>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="stream" type="org.nnsoft.commons.bspi.SimpleCharStream">
+</parameter>
+<parameter name="lexState" type="int">
+</parameter>
+</method>
+<method name="SwitchTo"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="lexState" type="int">
+</parameter>
+</method>
+<method name="getNextToken"
+ return="org.nnsoft.commons.bspi.Token"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="jjFillToken"
+ return="org.nnsoft.commons.bspi.Token"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</method>
+<method name="setDebugStream"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="ds" type="java.io.PrintStream">
+</parameter>
+</method>
+<field name="curChar"
+ type="char"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="debugStream"
+ type="java.io.PrintStream"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="input_stream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="jjnewLexState"
+ type="int[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="jjstrLiteralImages"
+ type="java.lang.String[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="lexStateNames"
+ type="java.lang.String[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="ServiceLoader"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="iterator"
+ return="java.util.Iterator&lt;S&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="load"
+ return="org.nnsoft.commons.bspi.ServiceLoader&lt;S&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="service" type="java.lang.Class&lt;S&gt;">
+</parameter>
+</method>
+<method name="load"
+ return="org.nnsoft.commons.bspi.ServiceLoader&lt;S&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="service" type="java.lang.Class&lt;S&gt;">
+</parameter>
+<parameter name="classLoader" type="java.lang.ClassLoader">
+</parameter>
+</method>
+<method name="loadInstalled"
+ return="org.nnsoft.commons.bspi.ServiceLoader&lt;S&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="service" type="java.lang.Class&lt;S&gt;">
+</parameter>
+</method>
+<method name="reload"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="typesIterator"
+ return="java.util.Iterator&lt;java.lang.Class&lt;? extends S&gt;&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="SimpleCharStream"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+</constructor>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+</constructor>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+<parameter name="buffersize" type="int">
+</parameter>
+</constructor>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</constructor>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</constructor>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+<parameter name="buffersize" type="int">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</constructor>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.Reader">
+</parameter>
+</constructor>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.Reader">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+</constructor>
+<constructor name="SimpleCharStream"
+ type="org.nnsoft.commons.bspi.SimpleCharStream"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.Reader">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+<parameter name="buffersize" type="int">
+</parameter>
+</constructor>
+<method name="BeginToken"
+ return="char"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="Done"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="ExpandBuff"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="wrapAround" type="boolean">
+</parameter>
+</method>
+<method name="FillBuff"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="GetImage"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="GetSuffix"
+ return="char[]"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="len" type="int">
+</parameter>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+<parameter name="buffersize" type="int">
+</parameter>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.InputStream">
+</parameter>
+<parameter name="encoding" type="java.lang.String">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+<parameter name="buffersize" type="int">
+</parameter>
+<exception name="UnsupportedEncodingException" type="java.io.UnsupportedEncodingException">
+</exception>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.Reader">
+</parameter>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.Reader">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+</method>
+<method name="ReInit"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="dstream" type="java.io.Reader">
+</parameter>
+<parameter name="startline" type="int">
+</parameter>
+<parameter name="startcolumn" type="int">
+</parameter>
+<parameter name="buffersize" type="int">
+</parameter>
+</method>
+<method name="UpdateLineColumn"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="c" type="char">
+</parameter>
+</method>
+<method name="adjustBeginLineColumn"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="newLine" type="int">
+</parameter>
+<parameter name="newCol" type="int">
+</parameter>
+</method>
+<method name="backup"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="amount" type="int">
+</parameter>
+</method>
+<method name="getBeginColumn"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getBeginLine"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getColumn"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getEndColumn"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getEndLine"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getLine"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTabSize"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="i" type="int">
+</parameter>
+</method>
+<method name="readChar"
+ return="char"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<exception name="IOException" type="java.io.IOException">
+</exception>
+</method>
+<method name="setTabSize"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="i" type="int">
+</parameter>
+</method>
+<field name="bufcolumn"
+ type="int[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="buffer"
+ type="char[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="bufline"
+ type="int[]"
+ transient="false"
+ volatile="false"
+ value="null"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="bufpos"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="column"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="inBuf"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="inputStream"
+ type="java.io.Reader"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="line"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="maxNextCharInd"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="prevCharIsCR"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="prevCharIsLF"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+<field name="staticFlag"
+ type="boolean"
+ transient="false"
+ volatile="false"
+ value="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="tabSize"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<class name="Token"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Token"
+ type="org.nnsoft.commons.bspi.Token"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="Token"
+ type="org.nnsoft.commons.bspi.Token"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="kind" type="int">
+</parameter>
+</constructor>
+<constructor name="Token"
+ type="org.nnsoft.commons.bspi.Token"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="kind" type="int">
+</parameter>
+<parameter name="image" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getValue"
+ return="java.lang.Object"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="newToken"
+ return="org.nnsoft.commons.bspi.Token"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="ofKind" type="int">
+</parameter>
+</method>
+<method name="newToken"
+ return="org.nnsoft.commons.bspi.Token"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="ofKind" type="int">
+</parameter>
+<parameter name="image" type="java.lang.String">
+</parameter>
+</method>
+<field name="beginColumn"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="beginLine"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="endColumn"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="endLine"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="image"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="kind"
+ type="int"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="next"
+ type="org.nnsoft.commons.bspi.Token"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="specialToken"
+ type="org.nnsoft.commons.bspi.Token"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="TokenMgrError"
+ extends="java.lang.Error"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="TokenMgrError"
+ type="org.nnsoft.commons.bspi.TokenMgrError"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="TokenMgrError"
+ type="org.nnsoft.commons.bspi.TokenMgrError"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="EOFSeen" type="boolean">
+</parameter>
+<parameter name="lexState" type="int">
+</parameter>
+<parameter name="errorLine" type="int">
+</parameter>
+<parameter name="errorColumn" type="int">
+</parameter>
+<parameter name="errorAfter" type="java.lang.String">
+</parameter>
+<parameter name="curChar" type="char">
+</parameter>
+<parameter name="reason" type="int">
+</parameter>
+</constructor>
+<constructor name="TokenMgrError"
+ type="org.nnsoft.commons.bspi.TokenMgrError"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="reason" type="int">
+</parameter>
+</constructor>
+<method name="LexicalError"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="EOFSeen" type="boolean">
+</parameter>
+<parameter name="lexState" type="int">
+</parameter>
+<parameter name="errorLine" type="int">
+</parameter>
+<parameter name="errorColumn" type="int">
+</parameter>
+<parameter name="errorAfter" type="java.lang.String">
+</parameter>
+<parameter name="curChar" type="char">
+</parameter>
+</method>
+<method name="addEscapes"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="str" type="java.lang.String">
+</parameter>
+</method>
+</class>
+</package>
+</api>

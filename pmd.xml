@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.5" timestamp="2011-12-18T16:04:19.597">
+<file name="/Users/simonetripodi/Documents/workspace/backport-spi/src/main/java/org/nnsoft/commons/bspi/ServiceClassIterator.java">
+<violation beginline="200" endline="203" begincolumn="13" endcolumn="13" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceClassIterator" method="closeQuietly" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+</pmd>
