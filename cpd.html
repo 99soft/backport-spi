@@ -26,7 +26,7 @@
                 
                 
                   <li id="publishDate">Last Published: 18 December 2011</li>
-                  <li class="divider">|</li> <li id="projectVersion">Version: 1.0.2-SNAPSHOT</li>
+                  <li class="divider">|</li> <li id="projectVersion">Version: 1.0.2</li>
                                       
                 
               </ul>
@@ -134,7 +134,50 @@
       <div id="bodyColumn" class="content">
         <div id="contentBox">
                               
-          <div class="section"><h2>CPD Results<a name="CPD_Results"></a></h2><p>The following document contains the results of PMD's  <a class="externalLink" href="http://pmd.sourceforge.net/cpd.html">CPD</a> 4.2.5.</p></div><div class="section"><h2>Duplications<a name="Duplications"></a></h2><p>CPD found no problems in your source code.</p></div>
+          <div class="section"><h2>CPD Results<a name="CPD_Results"></a></h2><p>The following document contains the results of PMD's  <a class="externalLink" href="http://pmd.sourceforge.net/cpd.html">CPD</a> 4.2.5.</p></div><div class="section"><h2>Duplications<a name="Duplications"></a></h2><table border="0" class="zebra-striped"><tr class="a"><th>File</th><th>Line</th></tr><tr class="b"><td>org/nnsoft/commons/bspi/ParseException.java</td><td><a href="./xref/org/nnsoft/commons/bspi/ParseException.html#156">156</a></td></tr><tr class="a"><td>org/nnsoft/commons/bspi/TokenMgrError.java</td><td><a href="./xref/org/nnsoft/commons/bspi/TokenMgrError.html#65">65</a></td></tr><tr class="b"><td colspan='2'><div><pre>  protected static final String addEscapes(String str) {
+    StringBuffer retval = new StringBuffer();
+    char ch;
+    for (int i = 0; i &lt; str.length(); i++) {
+      switch (str.charAt(i))
+      {
+        case 0 :
+          continue;
+        case '\b':
+          retval.append(&quot;\\b&quot;);
+          continue;
+        case '\t':
+          retval.append(&quot;\\t&quot;);
+          continue;
+        case '\n':
+          retval.append(&quot;\\n&quot;);
+          continue;
+        case '\f':
+          retval.append(&quot;\\f&quot;);
+          continue;
+        case '\r':
+          retval.append(&quot;\\r&quot;);
+          continue;
+        case '\&quot;':
+          retval.append(&quot;\\\&quot;&quot;);
+          continue;
+        case '\'':
+          retval.append(&quot;\\\'&quot;);
+          continue;
+        case '\\':
+          retval.append(&quot;\\\\&quot;);
+          continue;
+        default:
+          if ((ch = str.charAt(i)) &lt; 0x20 || ch &gt; 0x7e) {
+            String s = &quot;0000&quot; + Integer.toString(ch, 16);
+            retval.append(&quot;\\u&quot; + s.substring(s.length() - 4, s.length()));
+          } else {
+            retval.append(ch);
+          }
+          continue;
+      }
+    }
+    return retval.toString();
+  }</pre></div></td></tr></table></div>
                   </div>
       </div>
     </div>

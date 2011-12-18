@@ -1,8 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2011-12-18T16:04:19.597">
-<file name="/Users/simonetripodi/Documents/workspace/backport-spi/src/main/java/org/nnsoft/commons/bspi/ServiceClassIterator.java">
+<pmd version="4.2.5" timestamp="2011-12-18T17:18:36.802">
+<file name="/Users/simonetripodi/Documents/workspace/backport-spi/target/checkout/src/main/java/org/nnsoft/commons/bspi/ServiceClassIterator.java">
 <violation beginline="200" endline="203" begincolumn="13" endcolumn="13" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceClassIterator" method="closeQuietly" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
 Avoid empty catch blocks
+</violation>
+</file>
+<file name="/Users/simonetripodi/Documents/workspace/backport-spi/target/checkout/target/generated-sources/javacc/org/nnsoft/commons/bspi/ServiceFileParser.java">
+<violation beginline="41" endline="52" begincolumn="16" endcolumn="3" rule="UnnecessaryFinalModifier" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnnecessaryFinalModifier" priority="3">
+Unnecessary final modifier in final class
+</violation>
+<violation beginline="45" endline="45" begincolumn="9" endcolumn="9" rule="EmptyStatementNotInLoop" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" method="parse" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyStatementNotInLoop" priority="3">
+An empty statement (semicolon) not part of a loop
+</violation>
+<violation beginline="54" endline="62" begincolumn="17" endcolumn="3" rule="UnnecessaryFinalModifier" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnnecessaryFinalModifier" priority="3">
+Unnecessary final modifier in final class
+</violation>
+<violation beginline="88" endline="88" begincolumn="15" endcolumn="20" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" variable="jj_ntk" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'jj_ntk'.
+</violation>
+<violation beginline="225" endline="231" begincolumn="16" endcolumn="3" rule="UnnecessaryFinalModifier" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnnecessaryFinalModifier" priority="3">
+Unnecessary final modifier in final class
+</violation>
+<violation beginline="234" endline="241" begincolumn="16" endcolumn="3" rule="UnnecessaryFinalModifier" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnnecessaryFinalModifier" priority="3">
+Unnecessary final modifier in final class
+</violation>
+<violation beginline="243" endline="243" begincolumn="15" endcolumn="22" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" method="jj_ntk" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateMethod" priority="3">
+Avoid unused private methods such as 'jj_ntk()'.
+</violation>
+<violation beginline="316" endline="317" begincolumn="16" endcolumn="3" rule="UnnecessaryFinalModifier" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnnecessaryFinalModifier" priority="3">
+Unnecessary final modifier in final class
+</violation>
+<violation beginline="320" endline="321" begincolumn="16" endcolumn="3" rule="UnnecessaryFinalModifier" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnnecessaryFinalModifier" priority="3">
+Unnecessary final modifier in final class
+</violation>
+<violation beginline="337" endline="337" begincolumn="9" endcolumn="38" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParser" method="jj_rescan_token" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="/Users/simonetripodi/Documents/workspace/backport-spi/target/checkout/target/generated-sources/javacc/org/nnsoft/commons/bspi/ServiceFileParserTokenManager.java">
+<violation beginline="18" endline="18" begincolumn="1" endcolumn="26" rule="UnusedImports" ruleset="Import Statement Rules" package="org.nnsoft.commons.bspi" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.Iterator'
+</violation>
+<violation beginline="19" endline="19" begincolumn="1" endcolumn="31" rule="UnusedImports" ruleset="Import Statement Rules" package="org.nnsoft.commons.bspi" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.LinkedHashMap'
+</violation>
+<violation beginline="20" endline="20" begincolumn="1" endcolumn="31" rule="UnusedImports" ruleset="Import Statement Rules" package="org.nnsoft.commons.bspi" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.LinkedHashSet'
+</violation>
+<violation beginline="21" endline="21" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Import Statement Rules" package="org.nnsoft.commons.bspi" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.Set'
+</violation>
+<violation beginline="31" endline="38" begincolumn="15" endcolumn="1" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused method parameters such as 'active0'.
+</violation>
+<violation beginline="39" endline="39" begincolumn="19" endcolumn="53" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjStartNfa_0" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateMethod" priority="3">
+Avoid unused private methods such as 'jjStartNfa_0(int,long)'.
+</violation>
+<violation beginline="133" endline="133" begincolumn="36" endcolumn="38" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_0" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="162" endline="162" begincolumn="36" endcolumn="38" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_0" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="164" endline="164" begincolumn="37" endcolumn="39" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_0" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="227" endline="228" begincolumn="22" endcolumn="33" rule="CollapsibleIfStatements" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#CollapsibleIfStatements" priority="3">
+These nested if statements could be combined
+</violation>
+<violation beginline="247" endline="247" begincolumn="15" endcolumn="15" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" variable="l" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'l'.
+</violation>
+<violation beginline="247" endline="247" begincolumn="36" endcolumn="38" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="259" endline="259" begincolumn="14" endcolumn="15" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" variable="i1" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'i1'.
+</violation>
+<violation beginline="260" endline="260" begincolumn="15" endcolumn="16" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" variable="l1" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'l1'.
+</violation>
+<violation beginline="260" endline="260" begincolumn="36" endcolumn="38" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="261" endline="261" begincolumn="14" endcolumn="15" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" variable="i2" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'i2'.
+</violation>
+<violation beginline="262" endline="262" begincolumn="15" endcolumn="16" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" variable="l2" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'l2'.
+</violation>
+<violation beginline="262" endline="262" begincolumn="37" endcolumn="39" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjMoveNfa_1" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="339" endline="339" begincolumn="13" endcolumn="25" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" variable="lengthOfMatch" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'lengthOfMatch'.
+</violation>
+<violation beginline="470" endline="470" begincolumn="70" endcolumn="72" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="getNextToken" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="478" endline="478" begincolumn="74" endcolumn="76" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="getNextToken" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="480" endline="480" begincolumn="75" endcolumn="77" rule="AvoidUsingOctalValues" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="getNextToken" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingOctalValues" priority="3">
+Do not start a literal by 0 unless it's an octal value
+</violation>
+<violation beginline="507" endline="507" begincolumn="9" endcolumn="42" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="getNextToken" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="549" endline="549" begincolumn="14" endcolumn="44" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="org.nnsoft.commons.bspi" class="ServiceFileParserTokenManager" method="jjAddStates" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateMethod" priority="3">
+Avoid unused private methods such as 'jjAddStates(int,int)'.
+</violation>
+</file>
+<file name="/Users/simonetripodi/Documents/workspace/backport-spi/target/checkout/target/generated-sources/javacc/org/nnsoft/commons/bspi/TokenMgrError.java">
+<violation beginline="139" endline="141" begincolumn="10" endcolumn="3" rule="UselessOverridingMethod" ruleset="Basic Rules" package="org.nnsoft.commons.bspi" class="TokenMgrError" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UselessOverridingMethod" priority="3">
+Overriding method merely calls super
 </violation>
 </file>
 </pmd>

@@ -1,7 +1,7 @@
 -bootclasspath
 '/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar'
 -classpath
-'/Users/simonetripodi/Documents/workspace/backport-spi/target/classes:/Users/simonetripodi/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/simonetripodi/.m2/repository/junit/junit/4.10/junit-4.10.jar'
+'/Users/simonetripodi/Documents/workspace/backport-spi/target/checkout/target/classes:/Users/simonetripodi/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/simonetripodi/.m2/repository/junit/junit/4.10/junit-4.10.jar'
 -doclet
 'com.google.doclava.Doclava'
 -docletpath
@@ -10,6 +10,6 @@
 'UTF-8'
 -protected
 -sourcepath
-'/Users/simonetripodi/Documents/workspace/backport-spi/src/main/java:/Users/simonetripodi/Documents/workspace/backport-spi/target/generated-sources/javacc'
+'/Users/simonetripodi/Documents/workspace/backport-spi/target/checkout/src/main/java:/Users/simonetripodi/Documents/workspace/backport-spi/target/checkout/target/generated-sources/javacc'
 -hdf project.name "Backport Service Provider Interface"
-            -d /Users/simonetripodi/Documents/workspace/backport-spi/target/site/apidocs
+            -d /Users/simonetripodi/Documents/workspace/backport-spi/target/checkout/target/site/apidocs
