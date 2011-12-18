@@ -48,7 +48,7 @@ Introduction
   Now you can use the backported ServiceLoader:
 
 +--------------------------------------+
-import com.googlecode.bspi.ServiceLoader;
+import java.util.ServiceLoader;
 ...
 ServiceLoader<HelloService> ldr = ServiceLoader.load(HelloService.class);
 for (HelloService provider : ldr) {
@@ -65,7 +65,7 @@ for (HelloService provider : ldr) {
   types which implement the discovered Service:
 
 +--------------------------------------+
-import com.googlecode.bspi.ServiceLoader;
+import java.util.ServiceLoader;
 ...
 ServiceLoader<HelloService> ldr = ServiceLoader.load(HelloService.class);
 Iterator<Class<? extends HelloService>> serviceClassIterator = ldr.typesIterator();
