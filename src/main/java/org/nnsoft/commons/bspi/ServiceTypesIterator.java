@@ -19,7 +19,6 @@ import java.util.Iterator;
 import java.util.Map.Entry;
 
 /**
- * @version $Id: ServiceTypesIterator.java 26 2010-07-31 20:48:25Z simone.tripodi $
  * @param <S>
  */
 final class ServiceTypesIterator<S>

@@ -17,8 +17,6 @@ package org.nnsoft.commons.bspi;
 
 /**
  * Error thrown when something goes wrong while loading a service provider.
- *
- * @version $Id: ServiceConfigurationError.java 20 2010-07-31 19:30:53Z simone.tripodi $
  */
 public final class ServiceConfigurationError
     extends Error

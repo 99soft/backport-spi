@@ -25,7 +25,6 @@ import java.util.LinkedHashMap;
  * A simple service-provider loading facility.
  *
  * @param <S> The type of the service to be loaded by this loader.
- * @version $Id: ServiceLoader.java 28 2010-07-31 21:09:10Z simone.tripodi $
  */
 public final class ServiceLoader<S>
     implements Iterable<S>

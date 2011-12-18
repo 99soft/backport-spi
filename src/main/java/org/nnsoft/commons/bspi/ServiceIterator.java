@@ -19,7 +19,6 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 /**
- * @version $Id: ServiceIterator.java 27 2010-07-31 21:07:38Z simone.tripodi $
  * @param <S> The type of the service to be loaded by this loader.
  */
 final class ServiceIterator<S>
