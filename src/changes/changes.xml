@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright 2010 The backport-spi Team
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<!--
+    version: $Id: changes.xml 32 2010-07-31 22:35:55Z simone.tripodi $
+-->
+<document xmlns="http://maven.apache.org/changes/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
+    <properties>
+        <author email="simone dot tripodi at gmail dot com">Simone Tripodi</author>
+        <title>Changes</title>
+    </properties>
+
+    <body>
+        <release version="1.0.1" date="2010-08-01" description="Update release">
+            <action dev="simone.tripodi" type="update">
+                Extended ServiceLoader features adding support to iterate over
+                a set of elements of type Class&lt;? extends S&gt; through
+                com.googlecode.bspi.ServiceLoader#typesIterator().
+            </action>
+            <action dev="simone.tripodi" type="fix">
+                Fixed potential NPE on com.googlecode.bspi.ServiceLoader#load(Class, ClassLoader).
+            </action>
+            <action dev="simone.tripodi" type="update">
+                Improved javadoc.
+            </action>
+        </release>
+
+        <release version="1.0.0" date="2010-07-27" description="First release">
+            <action dev="simone.tripodi" type="update">
+                First release.
+            </action>
+        </release>
+    </body>
+
+</document>

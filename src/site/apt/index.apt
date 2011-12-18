@@ -1,0 +1,77 @@
+                                    ------
+                                    Introduction
+                                    ------
+                                    The backport-spi Team
+                                    ------
+                                     2010
+
+~~
+~~   Copyright 2010 The backport-spi Team
+~~
+~~   Licensed under the Apache License, Version 2.0 (the "License");
+~~   you may not use this file except in compliance with the License.
+~~   You may obtain a copy of the License at
+~~
+~~       http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~   Unless required by applicable law or agreed to in writing, software
+~~   distributed under the License is distributed on an "AS IS" BASIS,
+~~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~~   See the License for the specific language governing permissions and
+~~   limitations under the License.
+~~
+
+~~version: $Id: index.apt 36 2010-07-31 22:57:53Z simone.tripodi $
+
+Introduction
+
+  JDK 6 introduced <ServiceLoader>. <ServiceLoader> loads things based on flat files
+  in the directory <<<META-INF/services>>> from the Java classpath. The mechanism of
+  using <<<META-INF/services>>> has been around since JDK 1.3, under the name the
+  Java Extension Mechanism.
+
+  This library aims to provide a backport compatibility of Service Provider
+  Interface APIs to Java5.
+
+  To use it, just add the following <<<dependency>>> to your <<<pom.xml>>>:
+
++--------------------------------------+
+<dependencies>
+    ...
+    <dependency>
+        <groupId>com.googlecode.backport-spi</groupId>
+        <artifactId>backport-spi</artifactId>
+        <version>XX.XX</version>
+    </dependency>
+    ...
+</dependencies>
++--------------------------------------+
+
+  Now you can use the backported ServiceLoader:
+
++--------------------------------------+
+import com.googlecode.bspi.ServiceLoader;
+...
+ServiceLoader<HelloService> ldr = ServiceLoader.load(HelloService.class);
+for (HelloService provider : ldr) {
+    doSomething(provider);
+}
++--------------------------------------+
+
+  where <<<HelloService>>> is the interface/abstract class of the service.
+
+* Discovering Services types only
+
+  Starting from 1.0.1 version, the Backport SPI introduces a new feature to
+  allow users to iterate over Service <<<Class>>> iterator, to know only the
+  types which implement the discovered Service:
+
++--------------------------------------+
+import com.googlecode.bspi.ServiceLoader;
+...
+ServiceLoader<HelloService> ldr = ServiceLoader.load(HelloService.class);
+Iterator<Class<? extends HelloService>> serviceClassIterator = ldr.typesIterator();
+while (serviceClassIterator.hasNext()) {
+    // do something
+}
++--------------------------------------+

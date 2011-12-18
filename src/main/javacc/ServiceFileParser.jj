@@ -1,0 +1,115 @@
+PARSER_BEGIN(ServiceFileParser)
+/*
+ *    Copyright 2010 The backport-spi Team
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package com.googlecode.bspi;
+
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+/**
+ * 
+ *
+ * @version $Id$
+ */
+final class ServiceFileParser<S> implements Iterable<String> {
+
+    private final Set<String> serviceClassNames = new LinkedHashSet<String>();
+
+    private LinkedHashMap<String, Class<? extends S>> providerTypes;
+
+    @Deprecated
+    public void setProviders(LinkedHashMap<String, S> providers) {
+        // do nothing
+    }
+
+    public void setProviderTypes(LinkedHashMap<String, Class<? extends S>> providerTypes) {
+        this.providerTypes = providerTypes;    }
+
+    public Iterator<String> iterator() {
+        return this.serviceClassNames.iterator();    }
+
+}
+
+PARSER_END(ServiceFileParser)
+
+SKIP : { " " | "\t" | "\n" | "\r" | "\f" }
+
+MORE : { "#" : IN_SINGLE_LINE_COMMENT }
+
+<IN_SINGLE_LINE_COMMENT>
+SPECIAL_TOKEN : {
+    <SINGLE_LINE_COMMENT: "\n" | "\r" | "\r\n" > : DEFAULT
+}
+
+<IN_SINGLE_LINE_COMMENT>
+MORE : {
+    < ~[] >
+}
+
+TOKEN : {
+    < QUALIFIED_NAME: <IDENTIFIER> ("." <IDENTIFIER>)* >
+    |
+    < #IDENTIFIER: <LETTER> (<LETTER>|<DIGIT>)* >
+    |
+    < #LETTER: [
+       "\u0024",
+       "\u0041"-"\u005a",
+       "\u005f",
+       "\u0061"-"\u007a",
+       "\u00c0"-"\u00d6",
+       "\u00d8"-"\u00f6",
+       "\u00f8"-"\u00ff",
+       "\u0100"-"\u1fff",
+       "\u3040"-"\u318f",
+       "\u3300"-"\u337f",
+       "\u3400"-"\u3d2d",
+       "\u4e00"-"\u9fff",
+       "\uf900"-"\ufaff"
+      ]>
+    |
+      < #DIGIT:[
+       "\u0030"-"\u0039",
+       "\u0660"-"\u0669",
+       "\u06f0"-"\u06f9",
+       "\u0966"-"\u096f",
+       "\u09e6"-"\u09ef",
+       "\u0a66"-"\u0a6f",
+       "\u0ae6"-"\u0aef",
+       "\u0b66"-"\u0b6f",
+       "\u0be7"-"\u0bef",
+       "\u0c66"-"\u0c6f",
+       "\u0ce6"-"\u0cef",
+       "\u0d66"-"\u0d6f",
+       "\u0e50"-"\u0e59",
+       "\u0ed0"-"\u0ed9",
+       "\u1040"-"\u1049"
+      ]>
+}
+
+void parse(): {}
+{
+    ( serviceName() )* <EOF>
+}
+
+private void serviceName(): { Token serviceClassToken; }
+{    (serviceClassToken = <QUALIFIED_NAME>) {
+        String serviceClassName = serviceClassToken.toString();
+        if (!this.providerTypes.containsKey(serviceClassName)) {            this.serviceClassNames.add(serviceClassName);
+        }
+    }
+}
