@@ -45,6 +45,29 @@ Introduction
 </dependencies>
 +--------------------------------------+
 
+  or, for systems that have to be compiled in both JDKs 5 and 6, add it in a JDK5 proper profile:
+
++--------------------------------------+
+<profiles>
+  <profile>
+    <id>java-1.5-detected</id>
+    <activation>
+      <jdk>1.5</jdk>
+    </activation>
+    <dependencies>
+      [...]
+      <dependency>
+        <groupId>org.99soft.commons</groupId>
+        <artifactId>backport-spi</artifactId>
+        <version>XX.XX</version>
+      </dependency>
+      [...]
+    </dependencies>
+    [...]
+  </profile>
+</profiles>
++--------------------------------------+
+
   Now you can use the backported ServiceLoader:
 
 +--------------------------------------+
