@@ -23,7 +23,7 @@
 
     <menu ref="reports"/>
 
-    <menu name="External Links">
+    <menu name="References">
       <item name="Service Provider" href="http://download.oracle.com/docs/cd/E17476_01/javase/1.3/docs/guide/jar/jar.html#Service Provider"/>
       <item name="Java Service Loader" href="http://download.oracle.com/docs/cd/E17409_01/javase/6/docs/api/java/util/ServiceLoader.html"/>
     </menu>
