@@ -27,7 +27,7 @@
   <groupId>org.99soft.commons</groupId>
   <artifactId>backport-spi</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.2</version>
   <name>Backport Service Provider Interface</name>
   <description>The backport-spi library is backport of Service Provider Interface to Java5 with extra features.</description>
   <url>http://99soft.github.com/backport-spi</url>
